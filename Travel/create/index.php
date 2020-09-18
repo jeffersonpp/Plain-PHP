@@ -43,14 +43,16 @@ $travel->createdAt = date('Y-m-d H:i:s');
 }
 
 
-if($travel->create()){
+if($travel->create())
+{
     echo '{';
-        echo '"message": "Travel was created."';
+    echo '"message": "Travel was created."';
     echo '}';
 }
-else{
+else
+{
     echo '{';
-        echo '"message": "Unable to create travel."';
+    echo '"message": "Unable to create travel."';
     echo '}';
 }
 ?>

@@ -58,13 +58,9 @@ $travels = $traveling->read();
                 <td>Bag C</td> 
             </tr>
             <?php 
-
-
             while($travel = $travels->fetch(PDO::FETCH_ASSOC))
             {
                 extract($travel);
-
-
             ?>
             <tr>
                 <td><?=$vehicle ?></td> 

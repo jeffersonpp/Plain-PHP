@@ -67,29 +67,34 @@ $start=$array[0]['v_from'];
 array_splice($array, 0, 1);
 
 // The IDEA to reorder. 
-//If last TO == some other FROM, this item is erased from array and placed in the end of answer 
-// If last FROM == other TO, this item is erased from array and placed in the begin
-//for($o=(count($array)-1);$o>=0;){
+// If last TO is equal to some other FROM, this item is erased from array and placed in the end of answer 
+// If last FROM is equal to other TO, this item is erased from array and placed in the begin
+
 $other = true;
 $tryes = (count($array)-1);
 while($other){
 
-    for($i=(count($array)-1); $i>=0;$i--){
-        if($last==$array[$i]['v_from']){
+    for($i=(count($array)-1); $i>=0;$i--)
+    {
+        if($last==$array[$i]['v_from'])
+        {
             $last = $array[$i]['v_to'];
             array_push($answer, $array[$i]);
             array_splice($array, $i, 1);
         }
-        else if($start==$array[$i]['v_to']){
+        else if($start==$array[$i]['v_to'])
+        {
             $last = $array[$i]['v_from'];
             array_unshift($answer, $array[$i]);
             array_splice($array, $i, 1);
         }
     }
     if(count($array)<1){$other=false;}
-    else{
+    else
+    {
         $tryes -=1;
-        if($tryes<1){
+        if($tryes<1)
+        {
             echo "Error: Those tickets seems to refer to more than one travel;";
             $other=false;
         }
@@ -98,18 +103,23 @@ while($other){
 
 
 $final_text='<ul>';
-for($i=0;$i<count($answer);$i++){
+for($i=0;$i<count($answer);$i++)
+{
    $final_text .= '<li>Take the '. $answer[$i]['vehicle'].' '. $answer[$i]['vehicle_number']. ' from '. $answer[$i]['v_from']. ' to '. $answer[$i]['v_to'].'.';
-   if(isset($answer[$i]['gate'])){
+   if(isset($answer[$i]['gate']))
+   {
     $final_text .= ' Gate '. $answer[$i]['gate'];
    }
-   if(isset($answer[$i]['seat'])){
+   if(isset($answer[$i]['seat']))
+   {
     $final_text .= ' seat '. $answer[$i]['seat'].'.';
    }
-   else{
+   else
+   {
     $final_text .= ' No seat assignment.';
    }
-   if(isset($answer[$i]['bag_conditions'])){
+   if(isset($answer[$i]['bag_conditions']))
+   {
     $final_text .= ' Gate '. $answer[$i]['bag_conditions'].'.';
    }
    $final_text .= '</li>';
