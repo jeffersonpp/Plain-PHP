@@ -1,0 +1,88 @@
+<html>
+    <head>
+        <style>
+            form
+            {
+                text-align:center;
+                margin:auto;
+            }
+            div
+            { 
+                margin:auto;
+                text-align:left;
+                width:40%;
+            }
+            div label
+            {
+                text-align:left;
+            }
+            div input
+            {
+                text-align: right;
+                display: table;
+                width: 50%;
+                margin-left: 20%;
+            }
+            div input[type='submit']
+            {
+                text-align: center;
+                display: table;
+                width: 20%;
+                margin-left: 20%;
+                border:solid 1px #66b;
+                border-radius:4px;
+            }
+            div h2
+            {
+                text-align:center;
+                margin-left:-25%;
+            }
+        </style>        
+    </head>
+    <body>
+        <div>
+            <h2>Create Travel</h2>
+        </div>
+        <form action="./Travel/create/index.php" method="POST">
+            <div>
+            <label for="vehicle">Vehicle</label> 
+            <input name="vehicle">
+            </div>
+            <div>
+            <label for="vehicle_number">Vehicle Number</label> 
+            <input name="vehicle_number">
+            </div>
+            <div>
+            <label for="v_from">From</label> 
+            <input name="v_from">
+            </div>
+            <div>
+            <label for="v_to">To</label> 
+            <input name="v_to">
+            </div>
+            <div>
+            <label for="seat">Seat</label> 
+            <input name="seat">
+            </div>
+            <div>
+            <label for="gate">Gate</label> 
+            <input name="gate">
+            </div>
+            <div>
+            <label for="v_start">Start</label> 
+            <input type="datetime-local" name="v_start">
+            </div>
+            <div>
+            <label for="v_end">End</label> 
+            <input type="datetime-local" name="v_end">
+            </div>
+            <div>
+            <label for="bag_conditions">Bag Conditions</label> 
+            <input name="bag_conditions">
+            </div>
+            <div>
+                <input type="submit">
+            </div>
+        </form>        
+    </body>
+</html>
