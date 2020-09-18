@@ -8,4 +8,4 @@ This little system do the following:
 Plain PHP API using JSON to send values and JSON to get values
 
 ### Possible Paths
-Just link the travels by origin to destination
+Link the travels by origin to destination giving an overall info
