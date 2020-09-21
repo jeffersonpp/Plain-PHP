@@ -75,4 +75,15 @@ class Travel{
 
     public function purge()
     {
-        $sql = $this->con
+        $sql = $this->connection->prepare("DELETE FROM travel");
+        if( $sql->execute())
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+
+    }
+}
